@@ -7,7 +7,7 @@
 
 <body>
 	<div id="page_title" class="page_title" style="text-align: center;">
-		<h2>africars.io</h2>
+		<h2>Africars.io</h2>
         <p>It's Here To Stay</p>
         <p>Find your next vehicle in Africa on Africars.io</p>
     </div>
