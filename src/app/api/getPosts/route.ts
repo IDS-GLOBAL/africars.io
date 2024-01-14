@@ -9,7 +9,7 @@ type ResponseData = {
 console.log(' Hit My man route.tsx')
 
 //async function handler(req: NextApiRequest, res: NextApiResponse) {
-export default async function handler(req: NextRequest, res: NextResponse) {
+export async function handler(req: NextRequest, res: NextResponse) {
 
     console.log('Line 14 getPosts Hit req', req)
     console.log('Line 15 getPosts Hit res', res)
