@@ -1,0 +1,22 @@
+// https://youtu.be/mbsmsi7l3r4?si=Dtb7Se7NHiW8whM8
+
+GET http://localhost:5555/test
+
+###
+
+GET http://localhost:5555/posts
+
+###
+
+GET http://localhost:5556/getPosts
+Content-Type: application/json
+
+{
+    "useremail": "johndoe@johndoe.com",
+    "userpassword": "1234567890"
+}
+
+###
+
+
+GET http://localhost:5556/getPosts
