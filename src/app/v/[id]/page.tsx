@@ -1,9 +1,14 @@
 import React from 'react'
 
-const IdVehiclePage = () => {
+const IdVehiclePage = ({
+    params,
+}: {
+    params: { id: string },
+}) => {
     return (
         <div>
             Vehicle Id Page
+            <p>Id: {params.id}</p>
         </div>
     )
 }

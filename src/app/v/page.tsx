@@ -2,9 +2,10 @@ import React from 'react'
 
 const VehiclePage = () => {
     return (
-            <div>
-            <h1>Vehicle Details Page</h1>
-            </div>
+        <div>
+            <h1>Vehicle Page</h1>
+            
+        </div>
     )
 }
 

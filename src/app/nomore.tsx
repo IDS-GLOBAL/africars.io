@@ -33,10 +33,10 @@ async function getPosts() {
 
 export default async function Home(){
 
-  const data: { id: number; title: string }[] = await getPosts()
+  //const data: { id: number; title: string }[] = await getPosts()
   //const data = await getPosts()
   
-  console.log('Home Line 22 data: ', JSON.stringify(data))
+  //console.log('Home Line 22 data: ', JSON.stringify(data))
   //console.log('Home Line 22 data: ', data)
   return ( 
     <main className="py-8 px-48">
