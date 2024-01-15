@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
+<<<<<<< HEAD
 <file name=".htaccess" server="ftp.idscrm.com" local="133484627400000000" remote="133484627400000000" />
 <file name="index.php" server="ftp.idscrm.com" local="133484633957961344" remote="133484634000000000" />
+=======
+<file name="index.php" server="ftp.idscrm.com" local="133492623600000000" remote="133492653000000000" />
+<file name="LICENSE" server="ftp.idscrm.com" local="133494011400000000" remote="133494011400000000" />
+<file name="README.md" server="ftp.idscrm.com" local="133494011400000000" remote="133494011400000000" />
+>>>>>>> 3cfb9ef0d63f0f4468515e346fd8855e4ce0474d
 </dwsync>
