@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { NextRequest, NextResponse } from "next/server";
-import prisma from "../../../../prisma/client";
+import {PrismaClient} from "@prisma/client";
 
 type ResponseData = {
     message: string
@@ -8,16 +8,20 @@ type ResponseData = {
 
 console.log(' Hit My man route.tsx')
 
-//async function handler(req: NextApiRequest, res: NextApiResponse) {
-export async function handler(req: NextRequest, res: NextResponse) {
 
-    console.log('Line 14 getPosts Hit req', req)
-    console.log('Line 15 getPosts Hit res', res)
+//async function handler(req: NextApiRequest, res: NextApiResponse) {
+async function handler(request: NextRequest, response: NextResponse) {
+        
+    const prisma = new PrismaClient();
+    console.log('Line 14 getPosts Hit req', request)
+    console.log('Line 14 getPosts Hit req', JSON.stringify(request.method))
+    console.log('Line 15 getPosts Hit res', JSON.stringify(response))
     //res.status(200).json({ name: 'John Doe' })
-    if(req.method === 'GET'){
+    if(request.method === 'GET'){
         try {
             //Get primsa to fetch the post
-            const data = prisma.post.findMany();
+            
+            const data = await prisma.post.findMany();
             console.log('Line 21 data: ' + JSON.stringify(data))
             return NextResponse.json(data);
         } catch (error) {

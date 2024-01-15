@@ -8,7 +8,7 @@ GET http://localhost:5555/posts
 
 ###
 
-GET http://localhost:5556/getPosts
+GET http://localhost:5556/api/createUser
 Content-Type: application/json
 
 {
@@ -19,4 +19,11 @@ Content-Type: application/json
 ###
 
 
-GET http://localhost:5556/getPosts
+GET http://localhost:5556/api/getPosts
+
+###
+
+GET http://localhost:5556/api/getUsers
+
+
+###
