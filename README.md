@@ -1,41 +1,86 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Packages Used For This App Are The Following And Information of how they were installed and maybe what they do a little.
 
-## Getting Started
+## Signals 
 
-First, run the development server:
+Signals is a performant state management library with two primary goals
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Make it as easy as possible to write business logic for small up to complex apps. No matter how complex your logic is, your app updates should stay fast without you needing to think about it. Signals automatically optimize state updates behind the scenes to trigger the fewest updates necessary. They are lazy by default and automatically skip signals that no one listens to.
+Integrate into frameworks as if they were native built-in primitives. You don't need any selectors, wrapper functions, or anything else. Signals can be accessed directly and your component will automatically re-render when the signal's value changes
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Read More: https://classic.yarnpkg.com/en/package/@preact/signals-react
+Tutorial: https://www.youtube.com/watch?v=SO8lBVWF2Y8
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+    yarn add @preact/signals-react or npm i @preaact/signals-react
+    npm i @preaact/signals-react-native
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+    import { signal, computed } from "@preact/signals-react";
 
-To learn more about Next.js, take a look at the following resources:
+    const name = signal("WebGoonie")
+    console.log(name)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    setInterval(() => {
+        name.value = Math.random()
+    }, 500)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Best way to return a value for siginal setting
+    return JSON.parse(value)
 
-## Deploy on Vercel
+To Use it key effect is 
+    effect(() => {
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+        // Set Your signal state here
+    })
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-=======
-# africars.io
-The Automotive Market Place For Africa Car Trucks Bikes And Heavy Equipment Web And Mobile Application.
->>>>>>> 3cfb9ef0d63f0f4468515e346fd8855e4ce0474d
+    useSignal(() => {
+
+        // Set Your signal state here
+    })
+
+    useSignalEffect(() => {
+
+        // Set Your signal state here
+    })
+
+    const completedTodosCount = computed(() => {
+        return todos.value.filter(todo => todo.complted).length
+    })
+
+
+    return(
+        <div>
+            {/* Note .value holds now updated from an effect using computed */}
+            Completed {completedTodosCount.value}
+        </div>
+    )
+
+
+## Prisma
+
+With Prisma you have to use npx to get the built in features of prisma yarn or npm commands don't prompt powerful optional features prompted from terminal.
+
+
+    npx yarn prisma
+    npx prisma studio
+
+    npx init
+    npx prisma db pull or yarn prisma db pull
+
+
+    yarn prisma migrate dev or npx prisma migrate dev --name init
+
+When using mysql this is how the .env is prompted for the proper values the <> are actually strings no syntax at all.\
+
+    DATABASE_URL="mysql://<dbusername>:<dbpassword>@localhost:<dbport>/<dbdbname>"
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+
+

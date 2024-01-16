@@ -4,9 +4,13 @@
 
 
 html, 
-body, 
+body,
+#root,
+.app,
+.content, 
 :root {
   height: 100%;
+  width: 100%;
 }
 
 @layer base {
