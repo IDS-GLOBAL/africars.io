@@ -82,5 +82,30 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+## In how to descripe file stuctures in text.
 
+```sh
 
+        ProjectRoot
+        ├── src
+        │   ├── main
+        │   │   ├── java
+        │   │   │   ├── com
+        │   │   │   │   ├── example
+        │   │   │   │   │   ├── MyClass.java
+        │   │   │   │   │   ├── AnotherClass.java
+        │   │   │   │   │   └── ...
+        │   │   └── resources
+        │   │       ├── config.properties
+        │   │       └── ...
+        │   └── test
+        │       ├── java
+        │       │   ├── com
+        │       │   │   ├── example
+        │       │   │   │   ├── TestMyClass.java
+        │       │   │   │   └── ...
+        │       └── resources
+        │           └── testConfig.properties
+        └── ...
+
+```
